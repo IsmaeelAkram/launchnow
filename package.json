@@ -1,0 +1,19 @@
+{
+  "name": "takeoff",
+  "version": "1.0.0",
+  "description": "An easy workflow for developers who don't want to connect to their servers all the time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/novmbr/takeoff.git"
+  },
+  "author": "November",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/novmbr/takeoff/issues"
+  },
+  "homepage": "https://github.com/novmbr/takeoff#readme"
+}
