@@ -1,6 +1,6 @@
 {
   "name": "launchnow",
-  "version": "1.0.0",
+  "version": "2.3.0",
   "description": "An easy workflow for developers who don't want to connect to their servers all the time.",
   "main": "bin/launchnow.js",
   "scripts": {
