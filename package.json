@@ -6,6 +6,10 @@
   "scripts": {
     "start": "node ."
   },
+  "repository": "novmbr/launchnow",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "bin": {
     "launchnow": "./bin/launchnow.js"
   },
