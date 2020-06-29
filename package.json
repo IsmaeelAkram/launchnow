@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node ."
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@novmbr"
+  },
   "bin": {
     "launchnow": "./bin/launchnow.js"
   },
