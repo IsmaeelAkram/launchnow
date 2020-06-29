@@ -6,7 +6,7 @@
 
 Takeoff is an easy-to-use tool for developers who don't want to `git fetch` from their servers all the time.
 
-- ATTENTION! THIS ONLY WORKS FOR GITHUB.
+## THIS ONLY WORKS FOR GITHUB.
 
 ## Installation
 This project isn't done yet but once it is you will be able to install with `npm install -g takeoff`.

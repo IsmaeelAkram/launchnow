@@ -2,10 +2,12 @@
   "name": "takeoff",
   "version": "1.0.0",
   "description": "An easy workflow for developers who don't want to connect to their servers all the time.",
-  "main": "src/index.js",
+  "main": "bin/takeoff.js",
   "scripts": {
-    "start": "node .",
-    "dev": "nodemon ."
+    "start": "node ."
+  },
+  "bin": {
+    "takeoff": "./bin/takeoff.js"
   },
   "takeoff": {
     "script": "npm start",
