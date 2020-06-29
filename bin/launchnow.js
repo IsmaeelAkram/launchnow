@@ -2,10 +2,10 @@
 
 const chalk = require("chalk");
 const path = require("path");
-const package = require(path.relative(__dirname, "package.json"));
+const package = require(path.join(process.cwd(), "package.json"));
 const { default: Axios } = require("axios");
 const { exec } = require("child_process");
-const { stdout, stderr } = require("process");
+const fs = require("fs");
 const respawn = require("respawn");
 
 // LOGGING
@@ -18,7 +18,7 @@ function danger(x) {
 }
 
 function warning(x) {
-  cconsole.log(chalk.yellow("[⚠]") + " " + chalk.yellow(x));
+  console.log(chalk.yellow("[⚠]") + " " + chalk.yellow(x));
 }
 
 function good(x) {
@@ -27,6 +27,7 @@ function good(x) {
 
 let user;
 let repo;
+let check_interval;
 
 function sleep(ms) {
   return new Promise((resolve) => {
@@ -42,8 +43,31 @@ function get(dictionary, key) {
     return null;
   }
 }
+// Check if .git exists
+if (!fs.existsSync(path.relative(process.cwd(), ".git"))) {
+  danger("No .git folder found!");
+  danger(
+    "You need to add a remote to the repository. Learn how to add a remote here: https://help.github.com/en/github/using-git/adding-a-remote"
+  );
+  danger(
+    "If you already have a remote, make sure you are running launchnow in the root directory."
+  );
+  process.exit();
+}
 
-// Get github repository
+if (get(package.launchnow, "check_interval") == null) {
+  warning("No check interval specified. Defaulting to 1 minute.");
+  check_interval = 1;
+} else {
+  check_interval = package.launchnow.check_interval;
+}
+
+if (get(package.launchnow, "check_interval") < 1) {
+  warning("Check interval has to be a minimum of 1. Setting to default of 1.");
+  check_interval = 60000;
+}
+
+// Check if github_repo exists
 if (get(package.launchnow, "github_repo") == null) {
   danger("No github repository set in package.json! ");
   danger(
@@ -51,7 +75,7 @@ if (get(package.launchnow, "github_repo") == null) {
   );
   process.exit();
 }
-// Get script
+// Check if script exists
 if (get(package.launchnow, "script") == null) {
   danger("No script set in package.json! ");
   danger(
@@ -66,6 +90,9 @@ good(
 );
 good(
   `Script recognized as: ` + chalk.reset(chalk.bold(package.launchnow.script))
+);
+good(
+  "Check interval recognized as: " + chalk.reset(chalk.bold(check_interval))
 );
 user = package.launchnow.github_repo.split(":")[0];
 repo = package.launchnow.github_repo.split(":")[1];
@@ -88,14 +115,19 @@ var proc = respawn(package.launchnow.script.split(" "), {
   cwd: ".", // set cwd
   maxRestarts: -1, // how many restarts are allowed within 60s
   // or -1 for infinite restarts
-  stdio: [],
   sleep: 1000, // time to sleep between restarts,
   fork: false, // fork instead of spawn
 });
+
 proc.start();
+
+proc.on("stdout", (data) => {
+  console.log(data.toString());
+});
+
 info("Process started.");
 
-setInterval(() => {
+function checkPush() {
   info("Checking for new push...");
   Axios.get(`https://api.github.com/repos/${user}/${repo}/commits/master`)
     .then((res) => {
@@ -104,13 +136,26 @@ setInterval(() => {
         return;
       }
       if (res.data.sha != latestCommit) {
-        proc.stop();
-        proc.start();
-        info("Restarted.");
+        proc.stop(function () {
+          info("New push! Fetching....");
+          exec("git fetch", (err, stdout, stderr) => {
+            if (err) {
+              danger("Error: " + err);
+              process.exit();
+            }
+          }).on("close", (code, signal) => {
+            proc.start();
+            good("Restarted.");
+            latestCommit = res.data.sha;
+          });
+        });
       }
     })
     .catch((err) => {
       danger("Repository is either private or does not exist.");
       process.exit();
     });
-}, 60000);
+}
+
+checkPush();
+setInterval(checkPush, check_interval * 60000);

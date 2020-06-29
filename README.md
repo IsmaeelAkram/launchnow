@@ -24,8 +24,8 @@ In your **package.json** file, add this:
 }
 ```
 
-Then, run `launchnow` in the root of your project. That's it!
+Then, run `launchnow` in the root of your project. That's it! Now everytime somebody pushes to the github repository, launchnow will stop the old code, fetch the new code, and run it.
 
 ## Notes
 
-If you get an error containing `403 Forbidden`, you are getting rate-limited. To solve this, you will have to increase the `check_interval` and
+If you get an error containing `403 Forbidden`, you are getting rate-limited. To solve this, you will have to increase the `check_interval` and restart launchnow.

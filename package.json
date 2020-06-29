@@ -1,12 +1,11 @@
 {
   "name": "launchnow",
-  "version": "2.3.6",
+  "version": "2.3.7",
   "description": "An easy workflow for developers who don't want to connect to their servers all the time.",
   "main": "bin/launchnow.js",
   "scripts": {
     "start": "node ."
   },
-  "repository": "novmbr/launchnow",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@novmbr"
   },
