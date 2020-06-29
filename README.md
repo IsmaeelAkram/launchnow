@@ -6,4 +6,14 @@
 
 Takeoff is an easy-to-use tool for developers who don't want to `git fetch` from their servers all the time.
 
+## Installation
+This project isn't done yet but once it is you will be able to install with `npm install -g takeoff`.
+
 ## Usage
+In your **package.json** file, add this:
+```json
+"takeoff": {
+	"github_repo": "username:reponame",
+	"script": "npm start"
+}
+```
