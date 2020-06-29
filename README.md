@@ -10,7 +10,7 @@ launchnow is an easy-to-use tool for developers who don't want to `git fetch` fr
 
 ## Installation
 
-This project isn't done yet but once it is you will be able to install with `npm install -g launchnow`.
+You can install with `npm install -g launchnow`. It must be global as it is a command-line interface. Hence, you need the `-g`.
 
 ## Usage
 
