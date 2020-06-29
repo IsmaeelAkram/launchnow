@@ -34,8 +34,17 @@ function sleep(ms) {
   });
 }
 
+function get(dictionary, key) {
+  try {
+    let value = dictionary[key];
+    return value;
+  } catch (error) {
+    return null;
+  }
+}
+
 // Get github repository
-if (package.launchnow.github_repo == null) {
+if (get(package.launchnow, "github_repo") == null) {
   danger("No github repository set in package.json! ");
   danger(
     "Please read our github README (https://github.com/novmbr/launchnow/README.md) on the proper way of setting a script and repository."
@@ -43,7 +52,7 @@ if (package.launchnow.github_repo == null) {
   process.exit();
 }
 // Get script
-if (package.launchnow.script == null) {
+if (get(package.launchnow, "script") == null) {
   danger("No script set in package.json! ");
   danger(
     "Please read our github README (https://github.com/novmbr/launchnow/README.md) on the proper way of setting a script and repository."
@@ -68,6 +77,7 @@ Axios.get(`https://api.github.com/repos/${user}/${repo}`)
   })
   .catch((err) => {
     danger("Repository is either private or does not exist.");
+    proc.stop();
     process.exit();
   });
 
