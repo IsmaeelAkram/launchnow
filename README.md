@@ -19,6 +19,13 @@ In your **package.json** file, add this:
 ```json
 "launchnow": {
 	"github_repo": "username:reponame",
-	"script": "npm start"
+	"script": "npm start",
+	"check_interval": "1" // This is in minutes and the minimum check interval is 1 minute.
 }
 ```
+
+Then, run `launchnow` in the root of your project. That's it!
+
+## Notes
+
+If you get an error containing `403 Forbidden`, you are getting rate-limited. To solve this, you will have to increase the `check_interval` and
