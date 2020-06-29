@@ -20,7 +20,7 @@ In your **package.json** file, add this:
 "launchnow": {
 	"github_repo": "username:reponame",
 	"script": "npm start",
-	"check_interval": "1" //This is in minutes and the minimum check interval is 1 minute.
+	"check_interval": "1" << This is in minutes and the minimum check interval is 1 minute.
 }
 ```
 
