@@ -1,28 +1,28 @@
 {
-  "name": "takeoff",
+  "name": "launchnow",
   "version": "1.0.0",
   "description": "An easy workflow for developers who don't want to connect to their servers all the time.",
-  "main": "bin/takeoff.js",
+  "main": "bin/launchnow.js",
   "scripts": {
     "start": "node ."
   },
   "bin": {
-    "takeoff": "./bin/takeoff.js"
+    "launchnow": "./bin/launchnow.js"
   },
-  "takeoff": {
+  "launchnow": {
     "script": "npm start",
-    "github_repo": "novmbr:takeoff"
+    "github_repo": "novmbr:launchnow"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/novmbr/takeoff.git"
+    "url": "git+https://github.com/novmbr/launchnow.git"
   },
   "author": "November",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/novmbr/takeoff/issues"
+    "url": "https://github.com/novmbr/launchnow/issues"
   },
-  "homepage": "https://github.com/novmbr/takeoff#readme",
+  "homepage": "https://github.com/novmbr/launchnow#readme",
   "devDependencies": {
     "nodemon": "^2.0.4"
   },
