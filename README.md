@@ -16,11 +16,11 @@ You can install with `npm install -g launchnow`. It must be global as it is a co
 
 In your **package.json** file, add this:
 
-```json
+```
 "launchnow": {
 	"github_repo": "username:reponame",
 	"script": "npm start",
-	"check_interval": "1" << This is in minutes and the minimum check interval is 1 minute.
+	"check_interval": "1" // This is in minutes and the minimum check interval is 1 minute.
 }
 ```
 
