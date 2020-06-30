@@ -21,4 +21,4 @@ In your **package.json** file, add this:
 ```
 
 **YOU NEED TO ALLOW PORT 2424 THROUGH THE FIREWALL. IF NOT, THE CLIENT WILL NOT BE ABLE TO REQUEST A RE-DEPLOY.**
-Now, on your server, run `launchnow server`. Your project will start and start automatically. Now, whenever you want your server to fetch and restart, you can run `launchnow client <IP_OF_SERVER>`. The server will receive the request on port 2424 to fetch and restart.
+Now, on your server, run `launchnow server`. Launchnow will run and start your project automatically. Now, whenever you want your server to fetch and restart, you can run `launchnow client <IP_OF_SERVER>`. The server will receive the request on port 2424 to fetch and restart.

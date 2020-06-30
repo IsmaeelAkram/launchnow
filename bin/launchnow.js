@@ -11,6 +11,17 @@ const respawn = require("respawn");
 
 const args = process.argv.splice(2);
 
+if (args.length < 1) {
+  danger(
+    "Are you running a launchnow server or are you trying to deploy? Use" +
+      chalk.white("launchnow server") +
+      chalk.red(" to run a server and ") +
+      chalk.white("launchnow client <IP>") +
+      chalk.red(" to re-deploy a server.")
+  );
+  process.exit();
+}
+
 let type = "none";
 if (args[0].includes("server")) {
   type = "server";
@@ -111,7 +122,7 @@ if (type == "server") {
 
   app.get("/deploy", (req, res) => {
     fetchAndRestart();
-    return res.status(200);
+    res.sendStatus(200);
   });
 
   app.listen(2424, () => good("Launchnow server running on port 2424."));
