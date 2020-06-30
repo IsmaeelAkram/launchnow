@@ -71,11 +71,6 @@ if (type == "server") {
     );
     process.exit();
   }
-
-  good(
-    "GitHub repository recognized as: " +
-      chalk.reset(chalk.bold(package.launchnow.github_repo))
-  );
   good(
     `Script recognized as: ` + chalk.reset(chalk.bold(package.launchnow.script))
   );
