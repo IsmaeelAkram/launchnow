@@ -96,7 +96,7 @@ if (type == "server") {
 
   function fetchAndRestart() {
     info("Fetching...");
-    exec("git fetch", (err, stdout, stderr) => {
+    exec("git fetch && git merge", (err, stdout, stderr) => {
       if (err) {
         danger("Error: " + err);
         process.exit();
