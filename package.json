@@ -7,7 +7,7 @@
     "start": "node ."
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@novmbr"
+    "registry": "https://npm.pkg.github.com/@ismaeelakram"
   },
   "bin": {
     "launchnow": "./bin/launchnow.js"
@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/novmbr/launchnow.git"
+    "url": "git+https://github.com/ismaeelkaram/launchnow.git"
   },
   "author": "ismaeelakram",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/novmbr/launchnow/issues"
+    "url": "https://github.com/ismaeelakram/launchnow/issues"
   },
-  "homepage": "https://github.com/novmbr/launchnow#readme",
+  "homepage": "https://github.com/ismaeelakram/launchnow#readme",
   "devDependencies": {
     "nodemon": "^2.0.4"
   },
