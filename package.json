@@ -1,5 +1,5 @@
 {
-  "name": "@ismaeelakram/launchnow",
+  "name": "launchnow",
   "version": "3.2.7",
   "description": "An easy workflow for developers who don't want to connect to their servers all the time.",
   "main": "bin/launchnow.js",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ismaeelakram/launchnow.git"
+    "url": "git+https://github.com/novmbr/launchnow.git"
   },
-  "author": "ismaeelakram",
+  "author": "November",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ismaeelakram/launchnow/issues"
+    "url": "https://github.com/novmbr/launchnow/issues"
   },
-  "homepage": "https://github.com/ismaeelakram/launchnow#readme",
+  "homepage": "https://github.com/novmbr/launchnow#readme",
   "devDependencies": {
     "nodemon": "^2.0.4"
   },
