@@ -1,5 +1,5 @@
 {
-  "name": "launchnow",
+  "name": "@novmbr/launchnow",
   "version": "3.2.9",
   "description": "An easy workflow for developers who don't want to connect to their servers all the time.",
   "main": "bin/launchnow.js",
