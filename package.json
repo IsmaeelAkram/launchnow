@@ -1,5 +1,5 @@
 {
-  "name": "@novmbr/launchnow",
+  "name": "@ismaeelakram/launchnow",
   "version": "3.2.9",
   "description": "An easy workflow for developers who don't want to connect to their servers all the time.",
   "main": "bin/launchnow.js",
@@ -7,7 +7,7 @@
     "start": "node ."
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@novmbr"
+    "registry": "https://npm.pkg.github.com/@ismaeelakram"
   },
   "bin": {
     "launchnow": "./bin/launchnow.js"
@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/novmbr/launchnow.git"
+    "url": "git+https://github.com/ismaeelakram/launchnow.git"
   },
   "author": "November",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/novmbr/launchnow/issues"
+    "url": "https://github.com/ismaeelakram/launchnow/issues"
   },
-  "homepage": "https://github.com/novmbr/launchnow#readme",
+  "homepage": "https://github.com/ismaeelakram/launchnow#readme",
   "devDependencies": {
     "nodemon": "^2.0.4"
   },
